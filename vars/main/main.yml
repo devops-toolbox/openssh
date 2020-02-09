@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+openssh_repos_create: "{{ _openssh_repos_create['all']
+  | union ( _openssh_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+openssh_repos_download: "{{ _openssh_repos_download['all']
+  | union ( _openssh_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+openssh_templates_copy: "{{ _openssh_templates_copy['all']
+  | union ( _openssh_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+openssh_services_enable: "{{ _openssh_services_enable['all']
+  | union ( _openssh_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+openssh_selinux_enable: "{{ _openssh_selinux_enable['all']
+  | union ( _openssh_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+openssh_packages_remove: "{{ _openssh_packages_remove['all']
+  | union ( _openssh_packages_remove[my_os]
+  | default([]) ) }}"
+openssh_packages_repos: "{{ _openssh_packages_repos['all']
+  | union ( _openssh_packages_repos[my_os]
+  | default([]) ) }}"
+openssh_packages_prereq: "{{ _openssh_packages_prereq['all']
+  | union ( _openssh_packages_prereq[my_os]
+  | default([]) ) }}"
+openssh_packages_install: "{{ _openssh_packages_install['all']
+  | union ( _openssh_packages_install[my_os]
+  | default([]) ) }}"

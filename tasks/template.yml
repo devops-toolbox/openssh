@@ -1,0 +1,10 @@
+---
+# Template configuration files for openssh
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ openssh_templates_copy }}"
+  when: openssh_copy_templates
