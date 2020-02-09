@@ -8,10 +8,10 @@ openssh: Openssh
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.openssh](https://galaxy.ansible.com/devops-toolbox.openssh)
+[https://galaxy.ansible.com/devopstoolbox.openssh](https://galaxy.ansible.com/devopstoolbox.openssh)
 
 ```bash
-ansible-galaxy install devops-toolbox.openssh
+ansible-galaxy install devopstoolbox.openssh
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: openssh is configured
       import_role:
-        name: devops-toolbox.openssh
+        name: devopstoolbox.openssh
       vars:
         openssh_packages_state: present
         openssh_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
